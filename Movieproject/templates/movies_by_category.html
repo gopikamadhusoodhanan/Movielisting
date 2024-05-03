@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+    {% block title %}Movies by Category{% endblock %}
+{% block content %}
+    <h1>Movies in {{ selected_category }}</h1>
+    <ul>
+        {% for movie in movies %}
+            <li>{{ movie.title }}</li>
+            <li>Description: {{ movie.description }}</li>
+            <li>Release Date: {{ movie.release_date }}</li>
+            <li>Actors: {{ movie.actors }}</li>
+            <li>Category: {{ movie.category }}</li>
+            <li>Trailer Link: {{ movie.trailer_link }}</li>
+            <li>Added By: {{ movie.added_by }}</li>
+        {% empty %}
+            <li>No movies found in this category.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

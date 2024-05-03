@@ -1,0 +1,37 @@
+<!-- category_detail.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ category.name }} Detail{% endblock %}
+
+{% block content %}
+    <h1>{{ category.name }}</h1>
+    <h2>Movies in this category:</h2>
+    <ul>
+        {% for movie in movies %}
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <li>
+                        <h1>{{ movie.title }}</h1>
+                        <div class="movie-details">
+                            <img src="{{ movie.poster.url }}" alt="{{ movie.title }}" class="movie-poster" width="200px">
+                            <div class="movie-info">
+                                <p><strong>Description:</strong> {{ movie.description }}</p>
+                                <p><strong>Release Date:</strong> {{ movie.release_date }}</p>
+                                <p><strong>Actors:</strong> {{ movie.actors }}</p>
+                                <p><strong>Category:</strong> {{ movie.category }}</p>
+                                <p><strong>Trailer Link:</strong> <a href="{{ movie.trailer_link }}">{{ movie.trailer_link }}</a></p>
+                                <p><strong>Added By:</strong> {{ movie.added_by }}</p>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+            </div>
+        </div>
+        </li>
+        {% empty %}
+            <li>No movies found in this category.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

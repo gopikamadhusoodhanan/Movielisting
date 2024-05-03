@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row justify center">
+        <div class="col-md-8">
+            <h1>{{ movie.title }}</h1>
+                <div class="movie-details">
+                    <img src="{{ movie.poster.url }}" alt="{{ movie.title }}" class="movie-poster" width="200px">
+                    <div class="movie-info">
+                        <p><strong>Description:</strong> {{ movie.description }}</p>
+                        <p><strong>Release Date:</strong> {{ movie.release_date }}</p>
+                        <p><strong>Actors:</strong> {{ movie.actors }}</p>
+                        <p><strong>Category:</strong> {{ movie.category }}</p>
+                        <p><strong>Trailer Link:</strong> <a href="{{ movie.trailer_link }}">{{ movie.trailer_link }}</a></p>
+                        <p><strong>Added By:</strong> {{ movie.added_by }}</p>
+                    </div>
+                </div>
+                <!-- Display reviews -->
+                <div class="reviews">
+                    <h2>Reviews</h2>
+                    {% for review in reviews %}
+                        <div class="review">
+                            <p>{{ review.content }}</p>
+                            <p class="review-info">By: {{ review.user.username }} | {{ review.created_at }}</p>
+                        </div>
+                    {% empty %}
+                        <p>No reviews yet.</p>
+                    {% endfor %}
+                </div>
+                <!-- Display ratings -->
+                <div class="ratings">
+                    <h2>Ratings</h2>
+                    {% for rating in ratings %}
+                        <div class="rating">
+                            <p>Rating: {{ rating.value }}</p>
+                            <p class="rating-info">By: {{ rating.user.username }} | {{ rating.created_at }}</p>
+                        </div>
+                    {% empty %}
+                        <p>No ratings yet.</p>
+                    {% endfor %}
+                </div>
+                <!-- Add review form -->
+                <div class="add-review">
+                    <h2>Add Review</h2>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ review_form.as_p }}
+                        <button type="submit" class="btn btn-primary">Submit Review</button>
+                    </form>
+                </div>
+                <!-- Add rating form -->
+                <div class="add-rating">
+                    <h2>Add Rating</h2>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ rating_form.as_p }}
+                        <button type="submit" class="btn btn-primary">Submit Rating</button>
+                    </form>
+                </div>
+                        </div>
+                    </div>
+                </div>
+
+{% endblock %}

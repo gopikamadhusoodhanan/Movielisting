@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to MovieApp!</h1>
+        <p class="lead">This is the homepage.</p>
+        <hr class="my-4">
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{% url 'loginapp:register' %}" role="button">Register</a>
+            <a class="btn btn-success btn-lg" href="{% url 'loginapp:my-login' %}" role="button">Login</a>
+        </p>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">MovieApp</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav {% if 'category' in request.path %} active{% endif %}">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Movielist/category/Action/">Action</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Movielist/category/Comedy/">Comedy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Movielist/category/Love/">Love</a>
+                    </li>
+                </ul>
+            </div>
+<!--        <div class="collapse navbar-collapse" id="navbarNav">-->
+<!--            <ul class="navbar-nav mr-auto">-->
+<!--                <li class="nav-item dropdown {% if 'category' in request.path %} active{% endif %}">-->
+<!--                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--                        Categories-->
+<!--                    </a>-->
+<!--                    <ul class="dropdown-menu">-->
+<!--                       <li><a class="dropdown-item" href="/Movielist/category/Action/">Action</a></li>-->
+<!--                        <li><a class="dropdown-item" href="/Movielist/category/Comedy/">Comedy</a></li>-->
+<!--                        <li><a class="dropdown-item" href="/Movielist/category/Love/">Love</a></li>-->
+<!--                    </ul>-->
+<!--                </li>-->
+<!--            </ul>-->
+            <form class="form-inline my-2 my-lg-0 mr-2" action="{% url 'search_app:search' %}" method="GET">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'loginapp:edit_profile' %}">Edit Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'movie:user-logout' %}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endblock %}

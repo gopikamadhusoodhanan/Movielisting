@@ -1,0 +1,23 @@
+{% if query %}
+    <h1>Search Results for "{{ query }}"</h1>
+    {% if results %}
+        <ul>
+            {% for movie in results %}
+                <li>
+                    <h2>{{ movie.title }}</h2>
+                    <img src="{{ movie.poster.url }}" alt="{{ movie.title }}" width="200">
+                    <p>Description: {{ movie.description }}</p>
+                    <p>Release Date: {{ movie.release_date }}</p>
+                    <p>Actors: {{ movie.actors }}</p>
+                    <p>Category: {{ movie.category }}</p>
+                    <p>Trailer Link: {{ movie.trailer_link }}</p>
+                    <p>Added By: {{ movie.added_by }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+{% else %}
+    <h1>No search query provided.</h1>
+{% endif %}

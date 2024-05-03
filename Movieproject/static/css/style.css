@@ -1,0 +1,203 @@
+/* index page*/
+        body {
+            background-color: #f8f9fa;
+            padding-top: 50px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .jumbotron {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .btn {
+            margin-right: 10px;
+
+/*Login page*/
+    body {
+        background-color: #f8f9fa;
+    }
+    .container {
+        margin-top: 50px;
+        max-width: 600px;
+    }
+    .card {
+        border: 1px solid #ced4da;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .card-body {
+        padding: 30px;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    label {
+        font-weight: bold;
+    }
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    input[type="submit"] {
+        width: 100%;
+        padding: 15px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+/* Register Page*/
+body {
+    background-color: #f8f9fa;
+    padding-top: 50px;
+}
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+label {
+    font-weight: bold;
+}
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+/* Dashboard Page */
+.navbar {
+    margin-bottom: 20px;
+}
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+}
+/* add_movie Page */
+/* Custom styles for add movie form */
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-control-file {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.btn-primary {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+/* Movie_detail page(rate review) */
+.movie-details {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.movie-poster {
+    width: 200px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.movie-info {
+    flex-grow: 1;
+}
+
+.reviews,
+.ratings {
+    margin-bottom: 20px;
+}
+
+.review,
+.rating {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.review-info,
+.rating-info {
+    color: #888;
+    font-size: 14px;
+}
+/*Nav bar*/
+/* navbar.css */
+.navbar {
+    background-color: #343a40;
+    padding: 10px 0;
+}
+
+.navbar-brand {
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.dropdown-menu {
+    background-color: #343a40;
+}
+
+.dropdown-menu .dropdown-item {
+    color: #ffffff;
+}
+/* edit-profile */
+.form-group {
+            margin-bottom: 20px;
+        }

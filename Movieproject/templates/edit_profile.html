@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Edit Profile {% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row justify center">
+        <div class="col-md-6">
+        <h2 class="mt-5 mb-4">Edit Profile</h2>
+        <form method="post">
+            {% csrf_token %}
+            <!-- Username Field -->
+            <div class="form-group">
+                <label for="id_username" class="col-sm-3 col-form-label">Username</label>
+                {{ form.username }}
+            </div>
+            <!-- Email Field -->
+            <div class="form-group">
+                <label for="id_email" class="col-sm-3 col-form-label">Email</label>
+                {{ form.email }}
+            </div>
+            <!-- First Name Field -->
+            <div class="form-group">
+                <label for="id_first_name" class="col-sm-3 col-form-label">First Name</label>
+                {{ form.first_name }}
+            </div>
+            <!-- Last Name Field -->
+            <div class="form-group">
+                <label for="id_last_name" class="col-sm-3 col-form-label">Last Name</label>
+                {{ form.last_name }}
+            </div>
+            <!-- Password Field -->
+            <div class="form-group">
+                <label for="id_password1" class="col-sm-3 col-form-label">Password</label>
+                {{ form.password1 }}
+            </div>
+            <!-- Confirm Password Field -->
+            <div class="form-group">
+                <label for="id_password2" class="col-sm-3 col-form-label">Confirm Password</label>
+                {{ form.password2 }}
+            </div>
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

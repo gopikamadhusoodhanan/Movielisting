@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}Add Movie{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-5 mb-4">Add Movie</h1>
+    <form method="post" enctype="multipart/form-data" class="mt-4">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="title" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="poster">Poster:</label>
+            <input type="file" name="poster" id="poster" class="form-control-file">
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea name="description" id="description" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="release_date">Release Date:</label>
+            <input type="date" name="release_date" id="release_date" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="actors">Actors:</label>
+            <textarea name="actors" id="actors" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="category">Category:</label>
+            <select name="category" id="category" class="form-control">
+                {% for category in categories %}
+                    <option value="{{ category.id }}">{{ category.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="trailer_link">YouTube Trailer Link:</label>
+            <input type="url" name="trailer_link" id="trailer_link" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}

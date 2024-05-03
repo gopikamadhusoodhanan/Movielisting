@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Movielist {% endblock %}
+{% block content %}
+{% include 'nav.html' %}
+<div class="container">
+    <div class="row ">
+        <div class="col-md-8">
+            <h1>Welcome, {% if username %}{{ username }}{% else %}Guest{% endif %}</h1>
+            <a href="{% url 'movie:add_movie' %}">ADD MOVIES</a><br><br>
+            {% if movies %}
+                <ul>
+                    {% for movie in movies %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div  style="min-width:18rem;">
+                                <img src="{{ movie.poster.url }}" alt="{{ movie.title }}" width="300px" height="300px" style="float:left; margin-right: 10px;">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h2>{{ movie.title }}</h2>
+                                <p>Description: {{ movie.description }}</p>
+                                <p>Release Date: {{ movie.release_date }}</p>
+                                <p>Actors: {{ movie.actors }}</p>
+                                <p>Category: {{ movie.category }}</p>
+                                <p>Trailer Link: {{ movie.trailer_link }}</p>
+                                <p>Added By: {{ movie.added_by }}</p>
+                                <a href="{% url 'movie:movie_detail' movie.id %}">Review & Rating</a><br>
+                                <a href="{% url 'movie:edit_movie' movie.id %}">Edit</a><br>
+                                <a href="{% url 'movie:delete_movie' movie.id %}">Delete</a><br>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No movies added yet.</p>
+            {% endif %}
+            <br><br>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
